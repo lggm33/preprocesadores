@@ -1,0 +1,113 @@
+.header--principal {
+	margin-bottom: 10px;
+	width: 100%;
+	max-width: 1440px;
+	height: 60px;
+	display: grid;
+	grid-template-columns: 1fr 40px 40px;
+	border-bottom: 1px solid $color-variacion;
+}
+
+.logo--header {
+	width: 100%;
+	min-width: 175px;
+	max-width: 255px;
+	align-self: center;
+	img {
+		width: 100%;
+	}
+}
+
+.nav--header {
+	width: 25px;
+	height: 25px;
+	background-image: url("../../images/icons8-menú-24.png");
+	order: 2;
+	place-self: center;
+	ul {
+	display: none;
+	li {
+		list-style: none;
+		padding:10px 30px 10px 30px;
+		border-bottom: 1px solid #ebebeb ;
+	}
+	}
+}
+
+.header__busqueda {
+	place-self: center;
+	span {
+		display: none;
+	}
+	i {
+		font-size: 20px;
+		margin-right: 10px;
+		color: $color-secundario;
+	}
+}
+
+.nav--header:hover {
+	ul {
+		display: inline-block;
+		position: absolute;
+		right: 0;
+		top: 60px;
+		background-color: $color-claro;
+		padding: 0px;
+	}
+}
+
+@include media(desktop-s){
+	.header--principal {
+		height: 90px;
+		grid-template-columns: 1fr 2fr 1fr;
+	}
+	
+	.logo--header {
+		max-width: 300px;
+	}
+	.nav--header {
+		width: 100%;
+		padding-top:10px;
+		background: none;
+		order: 0;
+		justify-self: start;
+		ul {
+			width: 100%;
+			display: flex;
+			justify-content: space-around;
+			position: static;
+			li {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				border-bottom: none;
+			}
+			a {
+				color: $color-variacion;
+				@include titulos($Fuente2);
+			}
+		}
+		
+	}
+	
+	.header__busqueda {
+		padding-top:10px;
+		justify-self: end;
+		margin-right: 30px;
+		&:hover {
+			text-decoration: none;
+		}
+		span {
+			
+			display: inline;
+			color: $color-variacion;
+			@include titulos($Fuente2);	
+		}
+		@include media(desktop-s){
+			display:flex;
+		}
+	}
+}
+
+

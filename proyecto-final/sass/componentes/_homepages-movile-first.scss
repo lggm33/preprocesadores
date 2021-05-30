@@ -1,0 +1,76 @@
+.contenedor--home {
+	padding: 10px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	justify-items: center;
+	grid-gap: 15px;
+	grid-template-areas: none;
+	@include media(tablet) {
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: "cajaGrande cajaGrande"
+							"cajaGrande cajaGrande"
+							"banner banner"
+							"cajaMediana cajaMediana"
+							"cajaPequena1 sidebar"
+							"cajaPequena2 sidebar"
+							"cajaPequena3 cajaPequena4";
+		.caja--grande {
+			grid-area: cajaGrande;
+		}
+		
+		.caja-zelda {
+			grid-area: cajaMediana;
+		}
+		
+		.caja-ff {
+			grid-area: cajaPequena1;
+		}
+		
+		.caja-xbox {
+			grid-area: cajaPequena2;
+		}
+		
+		.caja-fortnite {
+			grid-area: cajaPequena3;
+		}
+		
+		.caja-rdr2 {
+			grid-area: cajaPequena4;
+		}
+		
+		.banner--homepage {
+			grid-area: banner;
+		}
+		
+		.sidebar--listado {
+			grid-area: sidebar;
+		}
+	}
+	@include media(desktop-s) {
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-areas: "cajaGrande cajaGrande cajaGrande "
+							"cajaGrande cajaGrande cajaGrande"
+							"sidebar cajaMediana cajaMediana "
+							"sidebar cajaPequena2 banner"
+							"cajaPequena1 cajaPequena4 cajaPequena3";
+	}
+	@include media(desktop-m) {
+		width: 1300px;
+		margin: 0 auto;
+		height: 1200px;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-areas: "cajaGrande cajaGrande cajaGrande cajaPequena1"
+							"cajaGrande cajaGrande cajaGrande banner"
+							"sidebar cajaMediana cajaMediana banner"
+							"sidebar cajaPequena2 cajaPequena3 cajaPequena4";
+	}
+}
+
+
+
+
+
+
+
+
+
